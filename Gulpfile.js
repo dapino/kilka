@@ -19,23 +19,24 @@ let gulp = require('gulp'),
 gulp.task('styles', () => {
     return gulp.src('./css/*.scss')
         .pipe(plumber(plumberErrorHandler))
-        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat('main.css'))
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./assets/css'))
         .pipe(livereload());
 });
 
-gulp.task('libjs', () => {
+gulp.task('scripts', () => {
     return gulp.src('./js/*.js')
-        .pipe(sourcemaps.init())
         .pipe(plumber(plumberErrorHandler))
         .pipe(concat('main.js'))
-        .pipe(sourcemaps.write())
         .pipe(babel({presets: ['env']}))
         .pipe(uglify())
         .pipe(gulp.dest('./assets/js'))
+        .pipe(livereload());
+});
+
+gulp.task('html', () => {
+    return gulp.src('./*.html')
         .pipe(livereload());
 });
 
@@ -43,6 +44,7 @@ gulp.task('watch', function() {
     livereload.listen();
     gulp.watch('./css/*.scss', ['styles']);
     gulp.watch('./js/*.js', ['scripts']);
+    gulp.watch('./*.html', ['html']);
 });
 
-gulp.task('default', ['styles', 'scripts','watch']);
+gulp.task('default', ['html', 'styles', 'scripts','watch']);
