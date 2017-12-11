@@ -1,0 +1,26 @@
+.project{
+  display: block;
+  padding: 1em;
+}
+
+.projectHeader{
+  color: $grayText;
+  .projectTitle{
+    font-size: 1em;
+    font-weight: semibold;
+    display: inline-block;
+    border-bottom: 1px solid lighten($grayText, 60%);
+    margin: 0 auto .2em;
+    padding-bottom: .25em;
+  }
+  .projectText{
+    font-size: .8em;
+
+  }
+  .projectClient{
+    font-size: .8em;
+    color: $lightGray;
+    font-weight: bold;
+
+  }
+}

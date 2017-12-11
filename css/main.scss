@@ -1,13 +1,7 @@
-*{
-  padding: 0;
-  margin:0;
-  box-sizing: border-box;
-}
+@import './modules/variables';
+@import './modules/helpers';
+@import './modules/layout';
+@import './modules/navbar';
+@import './modules/projects';
+@import './modules/slider';
 
-body{
-  background: white;
-}
-
-nav{
-  background-color: #f26722;
-}
