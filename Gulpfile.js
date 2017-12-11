@@ -17,7 +17,7 @@ let gulp = require('gulp'),
 
 
 gulp.task('styles', () => {
-    return gulp.src('./css/*.scss')
+    return gulp.src('./css/*.{css,scss}')
         .pipe(plumber(plumberErrorHandler))
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat('main.css'))
