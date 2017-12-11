@@ -15,6 +15,10 @@ let gulp = require('gulp'),
 
 
 
+gulp.task('images', () => {
+    return gulp.src('./images/*.{jpg,png,svg}')
+        .pipe(gulp.dest('./assets/images'))
+});
 
 gulp.task('styles', () => {
     return gulp.src('./css/*.{css,scss}')
@@ -43,8 +47,9 @@ gulp.task('html', () => {
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch('./css/*.scss', ['styles']);
+    gulp.watch('./css/modules/*.scss', ['styles']);
     gulp.watch('./js/*.js', ['scripts']);
     gulp.watch('./*.html', ['html']);
 });
 
-gulp.task('default', ['html', 'styles', 'scripts','watch']);
+gulp.task('default', ['html', 'images', 'styles', 'scripts','watch']);
