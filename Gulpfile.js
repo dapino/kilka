@@ -40,7 +40,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('html', () => {
-    return gulp.src('./*.html')
+    return gulp.src('./*.{html, php}')
         .pipe(livereload());
 });
 
@@ -49,7 +49,13 @@ gulp.task('watch', function() {
     gulp.watch('./css/*.scss', ['styles']);
     gulp.watch('./css/modules/*.scss', ['styles']);
     gulp.watch('./js/*.js', ['scripts']);
-    gulp.watch('./*.html', ['html']);
+    gulp.watch('./*.{html, php}', ['html']);
 });
+
+gulp.task('wp', function() {
+    return gulp.src('./assets/**/**.**')
+        .pipe(gulp.dest('./kilka-wp-theme/assets'))
+});
+
 
 gulp.task('default', ['html', 'images', 'styles', 'scripts','watch']);
