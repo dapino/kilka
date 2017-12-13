@@ -1,56 +1,49 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package kilka_design
- */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<main>
 
 		<?php
-		if ( have_posts() ) :
+            $loop = new WP_Query( array( 'post_type' => 'projects' ) );
+            $counter = 0;
+            if ( $loop->have_posts() ) :
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+                           <div class="project">
+                               <div class="projectHeader">
+                                   <h3 class="projectTitle"><?php echo get_the_title(); ?></h3>
+                                   <p class="projectText"><?php echo get_the_excerpt(); ?></p>
+                                   <p class="projectClient"><?php echo get_post_meta( get_the_ID(), 'client', true); ?></p>
+                               </div>
+                               <div class="projectCarousel" id="carousel-<?php echo $counter; ?>">
 
-			<?php
-			endif;
+                                      <?php if( class_exists('Dynamic_Featured_Image') ) {
+                                           global $dynamic_featured_image;
+                                           $featured_images = $dynamic_featured_image->get_featured_images( );
+                                                foreach( $featured_images as $images ):
+                                                    echo '<div><img src="'.$images['full'].'" alt=""></div>';
+                                                endforeach;
+                                       }?>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
 
-			the_posts_navigation();
 
-		else :
 
-			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+                               </div>
+                           </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                    <?php $counter++ ?>
+                <?php endwhile;
+
+            endif;
+            wp_reset_postdata();
+        ?>
+
+</main>
+
 
 <?php
-get_sidebar();
 get_footer();

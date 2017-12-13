@@ -72,23 +72,6 @@ if ( ! function_exists( "aa_setup" ) ) {
 }
 
 
-if ( ! function_exists( "aa_scripts" ) ){
-	function aa_scripts() {
-		wp_enqueue_style( 'theme', get_template_directory_uri() . './assets/css/main.css',  array() );
-
-		wp_enqueue_script( 'functions', get_template_directory_uri() . './assets/js/main.js', array( ), '', true );
-		wp_localize_script( 'functions', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
-	}
-	add_action( 'wp_enqueue_scripts', 'aa_scripts' );
-}
-
-if ( ! function_exists( "aa_admin_footer" ) ){
-	function aa_admin_footer() {
-		$protocol = is_ssl() ? 'https' : 'http';
-		echo '<span id="footer-thankyou">' . __( 'Desarrollado por', 'aa' ) . '<a href="http://dapino.co" target="_blank">Dapino</a></span>';
-	}
-}
-
 if ( ! function_exists( "aa_head_cleanup" ) ){
 	function aa_head_cleanup() {
 		remove_action( 'wp_head', 'feed_links_extra', 3 );					// Category Feeds
@@ -143,53 +126,17 @@ if ( ! function_exists( "aa_main_menu" ) ) {
 			array(
 				'menu'            => 'primary',
 				'theme_location'  => 'header_menu',
-				'depth'           => 4,
-				'container'       => 'div',
-				'container_class' => 'collapse navbar-collapse',
-				'container_id'    => 'navbar',
-				'menu_class'      => 'nav navbar-nav navbar-right',
-				'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+				'depth'           => 1,
+				'container'       => '',
+				'container_class' => '',
+				'container_id'    => '',
+				'menu_class'      => '',
+				'fallback_cb'     => '',
 				'walker'          => new wp_bootstrap_navwalker()
 			)
 		);
 	}
 }
-
-if ( ! function_exists( "aa_copyright_menu" ) ) {
-	function aa_copyright_menu(){
-		wp_nav_menu(
-			array(
-				'menu'            => 'copyright',
-				'theme_location'  => 'copyright_menu',
-				'depth'           => 4,
-				'container'       => false,
-				'menu_class'      => 'menu',
-				'menu_id'         => 'copyright-menu',
-				// 'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-				// 'walker'          => new wp_bootstrap_navwalker()
-			)
-		);
-	}
-}
-
-if ( ! function_exists( "aa_mobile_menu" ) ) {
-	function aa_mobile_menu(){
-		wp_nav_menu(
-			array(
-				'menu'            => 'mobile',
-				'theme_location'  => 'mobile_menu',
-				'depth'           => 4,
-				'container'       => 'nav',
-				'container_class' => '',
-				'container_id'    => 'header-menu-mobile',
-				'menu_class'      => 'menu',
-				// 'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-				// 'walker'          => new wp_bootstrap_navwalker()
-			)
-		);
-	}
-}
-
 
 
 if ( ! function_exists( "aa_logo" ) ) {
@@ -200,48 +147,7 @@ if ( ! function_exists( "aa_logo" ) ) {
 	}
 }
 
-if ( ! function_exists( "aa_remove_thumbnail_dimensions" ) ) {
-	function aa_remove_thumbnail_dimensions( $html ) {
-		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-		return $html;
-	}
-}
 
-if ( ! function_exists( "aa_wrap_oembed" ) ) {
-	function aa_wrap_oembed( $html ){
-		$html = preg_replace( '/(width|height)="\d*"\s/', "class=\"embed-responsive-item\"", $html );
-		return'<div class="embed-responsive embed-responsive-16by9">'.$html.'</div>';
-	}
-}
 
-if ( ! function_exists( "aa_filter_ptags_on_images" ) ) {
-	function aa_filter_ptags_on_images($content) {
-		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-		return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
-	}
-}
 
-if ( ! function_exists( "aa_mce_buttons" ) ) {
-	function aa_mce_buttons( $buttons ) {
-		$remove = array( 'forecolor' );
-
-		$buttons = array_diff( $buttons,$remove );
-		array_unshift( $buttons, 'backcolor' );
-		array_unshift( $buttons, 'forecolor' );
-		array_unshift( $buttons, 'fontsizeselect' );
-
-		return $buttons;
-	}
-}
-
-add_filter( 'the_content', 'aa_filter_ptags_on_images', 10);
-add_filter( 'embed_oembed_html', 'aa_wrap_oembed',10, 1 );
-
-require_once get_template_directory() . '/inc/directors-post-type.php';
-require_once get_template_directory() . '/inc/influencers-post-type.php';
 require_once get_template_directory() . '/inc/projects-post-type.php';
-require_once get_template_directory() . '/inc/digitales-post-type.php';
-require_once get_template_directory() . '/inc/customizer.php';
-require_once get_template_directory() . '/inc/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
-require_once get_template_directory() . '/inc/acf-addons/acf-repeater/acf-repeater.php';
-require_once get_template_directory() . '/inc/acf-addons/acf-gallery/acf-gallery.php';
