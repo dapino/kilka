@@ -16,12 +16,12 @@ let gulp = require('gulp'),
 
 
 gulp.task('images', () => {
-    return gulp.src('./images/*.{jpg,png,svg}')
+    return gulp.src('./src/images/*.{jpg,png,svg}')
         .pipe(gulp.dest('./assets/images'))
 });
 
 gulp.task('styles', () => {
-    return gulp.src('./css/*.{css,scss}')
+    return gulp.src('./src/css/*.{css,scss}')
         .pipe(plumber(plumberErrorHandler))
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(concat('main.css'))
@@ -30,7 +30,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-    return gulp.src('./js/*.js')
+    return gulp.src('./src/js/*.js')
         .pipe(plumber(plumberErrorHandler))
         .pipe(concat('main.js'))
         .pipe(babel({presets: ['env']}))
@@ -46,9 +46,9 @@ gulp.task('html', () => {
 
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('./css/*.scss', ['styles']);
-    gulp.watch('./css/modules/*.scss', ['styles']);
-    gulp.watch('./js/*.js', ['scripts']);
+    gulp.watch('./src/css/*.scss', ['styles']);
+    gulp.watch('./src/css/modules/*.scss', ['styles']);
+    gulp.watch('./src/js/*.js', ['scripts']);
     gulp.watch('./*.{html, php}', ['html']);
 });
 
