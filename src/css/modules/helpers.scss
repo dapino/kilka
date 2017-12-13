@@ -1,0 +1,25 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+html{
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+body{
+  background: white;
+  font-family: $mainFont;
+  overflow-x: hidden;
+}
+
+.overhidden{
+  overflow: hidden;
+}
+
+.orangeBg{
+  background-color: $orange;
+}
+

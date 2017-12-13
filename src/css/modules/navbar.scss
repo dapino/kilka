@@ -1,0 +1,172 @@
+nav{
+  background-color: $orange;
+  height: 2.5em;
+  padding: .5em;
+  position:relative;
+}
+.logo{
+  img{
+    height: 1.5em;
+  }
+}
+
+.burguerBtn{
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  right: 1em;
+  top: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 999;
+  transition: $defaultEase;
+  span{
+    position: absolute;
+    height: 6px;
+    width: 2em;
+    background-color: white;
+    transition:$defaultEase;
+    &:nth-child(1){
+      top: 8px
+    }
+    &:nth-child(2){
+      top: 1.25em;
+      margin-top: -3px;
+    }
+    &:nth-child(3){
+      bottom:8px;
+    }
+  }
+  &:hover{
+    opacity: 1;
+  }
+  &.active{
+    right:300px;
+    span{
+      position: absolute;
+      height: 6px;
+      width: 2em;
+      background-color: white;
+      &:nth-child(1){
+        top:1.05em;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2){
+        opacity: 0;
+      }
+      &:nth-child(3){
+        bottom:1.05em;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.mainMenu{
+  background-color: white;
+  width: 300px;
+  position: fixed;
+  right: -300px;
+  top: 0;
+  transition: $defaultEase;
+  z-index: 999;
+  li{
+    list-style-type: none;
+    border-top: 1px solid $orange;
+    position: relative;
+    transition: $defaultEase;
+    a{
+      display: block;
+      font-size: 1em;
+      padding: .6em 1em;
+      color: $grayText;
+      text-decoration: none;
+      transition: $defaultEase;
+    }
+    &.socialNetwork{
+      padding-left: 2em;
+      a{
+        &:before{
+          content: '';
+          height: 2.5em;
+          width: 2.5em;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-color: lighten($grayText, 60%);
+          background-repeat: no-repeat;
+          background-size: 1.2em;
+          background-position: center;
+          transition: $defaultEase;
+        }
+      }
+      &.behance{
+        a{
+          &:before{
+            background-image: url('../images/logo_behance.png');
+          }
+        }
+      }
+      &.flickr{
+        a{
+          &:before{
+            background-image: url('../images/logo_flickr.png');
+          }
+        }
+      }
+      &.fbook{
+        a{
+          &:before{
+            background-size: .5em;
+            background-image: url('../images/logo_facebook.png');
+          }
+        }
+      }
+    }
+    &.orangeBg{
+      a{
+        color: white
+      }
+    }
+    &:hover{
+      background-color: $orange;
+      a{
+        color:white;
+      }
+      &.orangeBg{
+        a{
+          background-color: darken($orange, 10%)
+        }
+      }
+      &.socialNetwork{
+        a{
+          &:before{
+            background-color: lighten($grayText, 30%);
+
+          }
+        }
+      }
+    }
+
+  }
+  &.visible{
+    right: 0;
+  }
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $grayText;
+  opacity: 0;
+  z-index: 900;
+  visibility: hidden;
+  transition: $defaultEase;
+  &.visible{
+    opacity: 0.5;
+    visibility: visible;
+  }
+}
