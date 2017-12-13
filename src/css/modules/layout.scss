@@ -1,0 +1,17 @@
+.container{
+  max-width: 1028px;
+  margin: auto;
+  padding: 2em 1em 4em;
+}
+
+footer{
+  background-color: $orange;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: .2em .5em;
+  color: white;
+  font-size: 13px;
+  opacity: 0.8;
+}

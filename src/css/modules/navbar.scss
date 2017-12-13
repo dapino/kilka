@@ -65,7 +65,7 @@ nav{
 .mainMenu{
   background-color: white;
   width: 300px;
-  position: absolute;
+  position: fixed;
   right: -300px;
   top: 0;
   transition: $defaultEase;
@@ -166,7 +166,7 @@ nav{
   visibility: hidden;
   transition: $defaultEase;
   &.visible{
-    opacity: 0.2;
+    opacity: 0.5;
     visibility: visible;
   }
 }
