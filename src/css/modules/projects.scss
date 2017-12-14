@@ -8,20 +8,31 @@
   color: $grayText;
   .projectTitle{
     font-size: 1em;
-    font-weight: semibold;
+    font-weight: 600;
+    text-transform: uppercase;
     display: inline-block;
     border-bottom: 1px solid lighten($grayText, 60%);
     margin: 0 auto .2em;
     padding-bottom: .25em;
+    width: 50%;
   }
   .projectText{
     font-size: .8em;
+    margin: 0;
 
   }
   .projectClient{
     font-size: .8em;
     color: $lightGray;
     font-weight: bold;
+    margin: 0;
 
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .project{
+    padding: 1.5em 1em;
   }
 }

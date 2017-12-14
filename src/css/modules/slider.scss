@@ -28,6 +28,38 @@
     position: absolute;
     top: 50%;
     margin-top: -25px;
+    opacity: 0.9;
+    transition: $defaultEase;
+    background-position: center;
+    @extend .arrowSlider;
+    &[data-controls="prev"]{
+      left: .5em;
+      background-image: url(../images/flecha_izq.png)
+    }
+    &[data-controls="next"]{
+      right: .5em;
+      background-image: url(../images/flecha_der.png)
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+
+.tns-controlss{
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0px;
+    border: 0px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
     opacity: 0.6;
     transition: $defaultEase;
     @extend .arrowSlider;
@@ -51,7 +83,4 @@
 
 .tns-outer{
   margin: 1em 0;
-}
-
-@media screen and (max-width: 768px) {
 }

@@ -2,7 +2,7 @@
 
 get_header(); ?>
 
-<main>
+<main class="wrapper" id="diseno">
 
 		<?php
             $loop = new WP_Query( array( 'post_type' => 'projects' ) );
@@ -41,6 +41,16 @@ get_header(); ?>
             endif;
             wp_reset_postdata();
         ?>
+
+
+        <?php $the_query = new WP_Query( 'page_id=2' ); ?>
+
+        <?php while ($the_query -> have_posts()) : $the_query -> the_post();  ?>
+            <div class="container">
+               <?php the_content(); ?>
+            </div>
+
+         <?php endwhile;?>
 
 </main>
 

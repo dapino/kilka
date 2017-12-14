@@ -2,7 +2,10 @@ nav{
   background-color: $orange;
   height: 2.5em;
   padding: .5em;
-  position:relative;
+  position:fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 .logo{
   img{
@@ -22,7 +25,7 @@ nav{
   transition: $defaultEase;
   span{
     position: absolute;
-    height: 6px;
+    height: 4px;
     width: 2em;
     background-color: white;
     transition:$defaultEase;
@@ -31,7 +34,7 @@ nav{
     }
     &:nth-child(2){
       top: 1.25em;
-      margin-top: -3px;
+      margin-top: -2px;
     }
     &:nth-child(3){
       bottom:8px;
@@ -43,19 +46,15 @@ nav{
   &.active{
     right:300px;
     span{
-      position: absolute;
-      height: 6px;
-      width: 2em;
-      background-color: white;
       &:nth-child(1){
-        top:1.05em;
+        top:1.1em;
         transform: rotate(45deg);
       }
       &:nth-child(2){
         opacity: 0;
       }
       &:nth-child(3){
-        bottom:1.05em;
+        bottom:1.1em;
         transform: rotate(-45deg);
       }
     }
@@ -129,7 +128,7 @@ nav{
       }
     }
     &:hover{
-      background-color: $orange;
+      background-color: lighten($grayText, 50%);
       a{
         color:white;
       }
@@ -155,7 +154,7 @@ nav{
 }
 
 .overlay{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
