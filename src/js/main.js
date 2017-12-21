@@ -57,7 +57,7 @@ function projects() {
                     items: 3
                 },
                 900: {
-                    items: 4
+                    items: 3
                 }
             }
         })
