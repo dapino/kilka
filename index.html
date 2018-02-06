@@ -5,16 +5,21 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon"
+          type="image/svg"
+          href="./assets/images/icono_kilkadg.svg">
+    <title>Kilka</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <title>Kilka</title>
 </head>
 <body>
 
     <nav>
         <header>
             <span class="logo">
-                <img src="./assets/images/logo_kilka.png" alt="Kilka Diseño Gráfico">
+                <img src="./assets/images/logo_kilkadg.svg" alt="Kilka Diseño Gráfico">
             </span>
         </header>
         <div class="burguerBtn" id="burguerBtn">
@@ -34,50 +39,195 @@
         </div>
     </nav>
 
-    <main>
-        <div class="project">
-            <div class="projectHeader">
-                <h3 class="projectTitle">tecnicas profesionales de cocina en colombia</h3>
-                <p class="projectText">Texto</p>
-                <p class="projectClient">Cliente</p>
-            </div>
-            <div class="projectCarousel" id="carousel-1">
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-            </div>
-        </div>
 
-        <div class="project">
-            <div class="projectHeader">
-                <h3 class="projectTitle">tecnicas profesionales de cocina en colombia</h3>
-                <p class="projectText">Texto</p>
-                <p class="projectClient">Cliente</p>
+
+
+    <main class="wrapper" id="diseño">
+        <!-- PROJECTS-->
+        <section class="projects">
+            <div class="project">
+                <div class="projectHeader">
+                    <h3 class="projectTitle">tecnicas profesionales de cocina en colombia</h3>
+                    <p class="projectText">Texto</p>
+                    <p class="projectPrizes" style="color:red;">Libro ganador del premio Gourmand World Cookbook Awards 2017</p>
+                    <p class="projectClient">Cliente</p>
+                </div>
+                <div class="projectContent">
+                    <div class="dragInitialization">
+                        <img src="./assets/images/drag-left.svg" alt="Arrastra hacia tu izquierda">
+                    </div>
+                    <div class="carouselCont" id="carouselCont-0">
+                        <div id="carousel-0" class="touchcarousel carousel-gallery">
+                            <ul class="touchcarousel-container">
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_02.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_03.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_04.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_05.jpg"  height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_06.jpg" height="600"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="projectCarousel" id="carousel-2">
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
-                <div><img src="./assets/images/example.jpg" alt=""></div>
+
+            <div class="project">
+                <div class="projectHeader">
+                    <h3 class="projectTitle">tecnicas profesionales de cocina en colombia</h3>
+                    <p class="projectText">Texto</p>
+                    <p class="projectClient">Cliente</p>
+                </div>
+                <div class="projectContent">
+                    <div class="dragInitialization">
+                        <img src="./assets/images/drag-left.svg" alt="Arrastra hacia tu izquierda">
+                    </div>
+                    <div class="carouselCont" id="carouselCont-1">
+                        <div id="carousel-1" class="touchcarousel carousel-gallery">
+                            <ul class="touchcarousel-container">
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                                <li class="touchcarousel-item">
+                                    <img src="./src/example-images/cocina_01.jpg" height="600"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+
+
+        </section>
+        <!-- /PROJECTS-->
+
+
+        <!-- CONTACT-->
+        <section class="section gray-bg" id="clientes">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-1">
+                        <h3>NUESTROS CLIENTES</h3>
+                    </div>
+                    <div class="col col-3">
+                        <p>Colegio Mayor de Nuestra Señora del Rosario<br />
+                            Fundación Empresarios por la Educación<br />
+                            Pontificia Universidad Javeriana<br />
+                            Universidad de la Sabana<br />
+                            Universidad Distrital Francisco José de Caldas<br />
+                            Universidad Nacional de Colombia<br />
+                            Universidad Pedagógica y Tecnológica de Colombia<br />
+                            Universidad Santo Tómas<br />
+                        </p>
+                    </div>
+                    <div class="col col-3">
+                        <p>
+                            Alianza Francesa Bogotá<br />
+                            Banco de la República<br />
+                            Centro Regional para la Salvaguardia del Patrimonio Cultural Inmaterial de América Latina<br />
+                            Ministerio de Cultura<br />
+                            The World Bank Group<br />
+                        </p>
+                    </div>
+                    <div class="col col-3">
+                        <p>
+                            Fundacion Investigaciones Arqueológicas Nacionales<br />
+                            Fundación Natura<br />
+                            Instituto Alexander Von Humboldt<br />
+                            Patrimonio Natural, Fondo para la Biodiversidad y Áreas Protegidas<br />
+                            WWF-Colombia</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contacto">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-1">
+                        <h3 >CONTÁCTENOS</h3>
+                    </div>
+                    <div class="col col-1">
+                        <p>Favor escribir su mensaje. Lo contactaremos lo antes posible.</p>
+                        <p>Teléfonos</p>
+                        <p>(57-1) 477 82 12 – 320 855 52 89 – Bogotá &#8211; Colombia</p>
+                        <!-- FORM--
+                            <div role="form" class="wpcf7" id="wpcf7-f30-o1" lang="es-CO" dir="ltr">
+                                <div class="screen-reader-response"></div>
+                                <form action="/demos/kilka/#wpcf7-f30-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                    <div style="display: none;">
+                                        <input type="hidden" name="_wpcf7" value="30" />
+                                        <input type="hidden" name="_wpcf7_version" value="4.9.2" />
+                                        <input type="hidden" name="_wpcf7_locale" value="es_CO" />
+                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f30-o1" />
+                                        <input type="hidden" name="_wpcf7_container_post" value="0" />
+                                    </div>
+                                    <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nombre" /></span> </p>
+                                    <p>    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" /></span></p>
+                                    <p>    <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Asunto" /></span></p>
+                                    <p>    <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Mensaje"></textarea></span> </p>
+                                    <p><input type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit" /></p>
+                                    <div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+                        <!-- /FORM-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section gray-bg" id="quienes">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-1">
+                        <h3>QUIÉNES SOMOS</h3>
+                    </div>
+                    <div class="col col-3">
+                        <p>Kilka diseño gráfico es una empresa dedicada a la prestación de servicios de<br />
+                        diseño gráfico, impresión y coordinación de proyectos editoriales como libros,<br />
+                        revistas, afiches, cd’s entre otros y proyectos digitales como páginas web y<br />
+                        presentaciones multimedias.</p>
+                    </div>
+                    <div class="col col-3">
+                        <p>Kilka somos:</p>
+                        <p>Carlos Vargas Salazar<br />
+                            Miguel Angel Castiblanco<br />
+                            Miguel Gerardo Ramírez<br />
+                            Diseñadores Gráficos, Universidad Nacional de Colombia</p>
+                    </div>
+                    <div class="col col-3">
+                        <p>¿Qué es Kilka?</p>
+                        <p>La palabra la conocimos con los indígenas guambianos en el Cauca y significa<br />
+                            para ellos papel. Para nosotros éste es el sustrato donde comienzan y en<br />
+                            ocasiones finalizan los trabajos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /CONTACT-->
 
     </main>
 
-    <section class="contentSection">
-        <h2 class="sectionTitle">Nosotros</h2>
-        <p class="sectionContent">Texto de nosotros</p>
-    </section>
-
-    <footer>
-        <span class="copyright">Kreativos</span>
-    </footer>
-
     <div class="overlay" id="overlay"></div>
-
     <script src="./assets/js/main.js"></script>
+
 </body>
 </html>
