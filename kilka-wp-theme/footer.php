@@ -5,6 +5,6 @@
     </footer>
     <div class="overlay" id="overlay"></div>
 
-    <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/main.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/scripts.js"></script>
 	</body>
 </html>

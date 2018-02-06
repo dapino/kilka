@@ -2,7 +2,7 @@
         <header>
             <span class="logo">
                 <a href="<?php echo get_home_url(); ?>">
-                    <img src="<?php echo get_stylesheet_directory_uri()?>/assets/images/logo_kilka.png" alt="Kilka Diseño Gráfico">
+                    <img src="<?php echo get_stylesheet_directory_uri()?>/assets/images/logo_kilkadg.svg" alt="Kilka Diseño Gráfico">
                 </a>
             </span>
         </header>

@@ -1,11 +1,40 @@
 .wrapper{
   margin: auto;
-  padding: 2em;
 }
 
+section, .section{
+  width: 100%;
+  padding: 2em 0 2em;
+  &.gray-bg{
+    padding: 4em 0;
+    background-color: #d5d5d5;
+    /*&:nth-child(odd){
+      background-color: #fff;
+    }*/
+  }
+}
 .container{
-  width: 50%;
-  padding: 1.5em 3em;
+  width: 60%;
+  margin: auto;
+  .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .col{
+      padding: 1em;
+      &-1{
+        width: 100%;
+      }
+      &-2{
+        width: 50%
+      }
+      &-3{
+        width: (100%/3)
+      }
+    }
+
+  }
 
   h3,h1,h2,h4,h5{
     font-size: 1em;
@@ -21,6 +50,10 @@
     font-size: .8em;
     margin: 0;
   }
+}
+
+.row{
+  display: inline-block;
 }
 
 .anchor{
@@ -44,8 +77,34 @@ footer{
 
 
 @media screen and (max-width: 768px) {
-  .wrapper, .container{
-    padding: 2em 1em;
+  .wrapper{
+    padding-top: 2em;
     width: 100%;
+  }
+  .section, section{
+    padding: 1em 0;
+  }
+  .container{
+    width: 100%;
+    padding: 1em;
+    .row{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .col{
+        padding: 1em 0em;
+        &-1{
+          width: 100%;
+        }
+        &-2{
+          width: 100%
+        }
+        &-3{
+          width: 100%
+        }
+      }
+
+    }
   }
 }

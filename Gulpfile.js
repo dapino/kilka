@@ -1,9 +1,9 @@
 'use strict'
 
 let gulp = require('gulp'),
-    babel = require('gulp-babel'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
+    babel = require('gulp-babel'),
     uglify = require('gulp-uglify'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify'),

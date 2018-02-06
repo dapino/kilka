@@ -47,14 +47,14 @@ nav{
     span{
       background-color: $orange;
       &:nth-child(1){
-        top:1em;
+        top:.95em;
         transform: rotate(45deg);
       }
       &:nth-child(2){
         opacity: 0;
       }
       &:nth-child(3){
-        bottom:1em;
+        bottom:.95em;
         transform: rotate(-45deg);
       }
     }
@@ -102,14 +102,14 @@ nav{
       &.behance{
         a{
           &:before{
-            background-image: url('../images/logo_behance.png');
+            background-image: url('../images/icono_behance.svg');
           }
         }
       }
       &.flickr{
         a{
           &:before{
-            background-image: url('../images/logo_flickr.png');
+            background-image: url('../images/icono_flickr.svg');
           }
         }
       }
@@ -117,7 +117,7 @@ nav{
         a{
           &:before{
             background-size: .5em;
-            background-image: url('../images/logo_facebook.png');
+            background-image: url('../images/icono_facebook.svg');
           }
         }
       }

@@ -30,9 +30,133 @@
   }
 }
 
+.projectContent{
+  position: relative;
+  &:hover{
+    .dragInitialization{
+      width: 0;
+      img{
+        opacity: 0;
+        width: 0;
+      }
+    }
+  }
+}
+.dragInitialization{
+  position: absolute;
+  right: 0;
+  width: 10%;
+  height: 100%;
+  background: transparent;
+  //background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 25%,rgba(255,255,255,1) 100%);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  transition: all .5s ease;
+  img{
+    opacity: 1;
+    width: 50px;
+    transform: translateX(-10px);
+    animation-name: bounce;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition: all .5s ease;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(-25px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+
+/*
+.carouselCont {
+  cursor: url('../images/drag.png'),e-resize;
+  height: 600px;
+  //min-height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  position: relative;
+}
+
+.project-index {
+  //margin-top: -200px;
+  position: relative;
+  //top: 50%;
+  height: 600px;
+  display: flex;
+}
+
+.project-index figure {
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  img{
+    height: 100%;
+    width: auto;
+  }
+}
+
+*/
+
+.carousel-gallery {
+  width: 100%;
+  margin: 0;
+  padding: 15px 0;
+  background: white;
+  overflow: hidden !important;
+}
+.carousel-gallery .touchcarousel-wrapper {
+  overflow: visible;
+  margin-left: 80px;
+}
+.carousel-gallery .touchcarousel-item {
+  margin-right: 15px;
+  background: #CCC;
+  height: 400px;
+}
+.carousel-gallery .arrow-icon.left {
+  left: 25px;
+}
+.carousel-gallery .arrow-icon.right {
+  right: 25px;
+}
+.carousel-gallery .arrow-holder {
+  width: 60px;
+}
+.carousel-gallery  .scrollbar-holder {
+  bottom: 6px;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
   .project{
     padding: 1.5em 1em;
+  }
+  .projectHeader {
+    .projectTitle {
+      width: 100%;
+    }
+  }
+  .dragInitialization{
+    opacity: 0.5;
+    width: 0%;
+    img{
+      width: 40px;
+    }
   }
 }
