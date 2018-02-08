@@ -14,7 +14,7 @@ get_header(); ?>
                        <div class="projectHeader">
                            <h3 class="projectTitle"><?php echo get_the_title(); ?></h3>
                            <p class="projectText"><?php echo get_the_excerpt(); ?></p>
-                           <p class="projectText" style="color:red;"><?php echo get_post_meta( get_the_ID(), 'prize', true); ?></p>
+                           <p class="projectText"><?php echo get_post_meta( get_the_ID(), 'prize', true); ?></p>
                            <p class="projectClient"><?php echo get_post_meta( get_the_ID(), 'client', true); ?></p>
                        </div>
                        <div class="projectContent">
@@ -29,7 +29,7 @@ get_header(); ?>
                                                global $dynamic_featured_image;
                                                $featured_images = $dynamic_featured_image->get_featured_images( );
                                                     foreach( $featured_images as $images ):
-                                                        echo ' <li class="touchcarousel-item"><img src="'.$images['full'].'" alt="" height="600"> </li>';
+                                                        echo ' <li class="touchcarousel-item"><img src="'.$images['full'].'" > </li>';
                                                     endforeach;
                                            }?>
 

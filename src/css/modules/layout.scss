@@ -46,9 +46,12 @@ section, .section{
     padding-bottom: .25em;
     width: 100%;
   }
-  p{
+  p, li{
     font-size: .8em;
     margin: 0;
+  }
+  li{
+    margin-left: 1em;
   }
 }
 
