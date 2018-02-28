@@ -53,8 +53,10 @@ function createCarousel(sliders) {
             snapToItems: false,
             itemsPerMove: 1,
             scrollToLast: false,
-            loopItems: false,
-            scrollbar: false
+            loopItems: true,
+            scrollbar: false,
+            scrollToLast: false,
+            useWebkit3d: true
         });
     })
 }

@@ -29,7 +29,8 @@ get_header(); ?>
                                                global $dynamic_featured_image;
                                                $featured_images = $dynamic_featured_image->get_featured_images( );
                                                     foreach( $featured_images as $images ):
-                                                        echo ' <li class="touchcarousel-item"><img src="'.$images['full'].'" > </li>';
+                                                    //print_r ($images);
+                                                        echo ' <li class="touchcarousel-item">' . wp_get_attachment_image($images['attachment_id'], 'full') . ' </li>';
                                                     endforeach;
                                            }?>
 
