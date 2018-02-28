@@ -25,8 +25,7 @@
 
 .touchcarousel {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 100%;
 
   /* style is removed after carousel is inited, use !important if you want to keep it*/
   overflow: hidden;
@@ -37,7 +36,6 @@
   padding: 0;
   list-style: none;
   left: 0;
-  display: flex;
 }
 .touchcarousel .touchcarousel-wrapper {
   position: relative;
@@ -60,7 +58,7 @@
   /* use margin-right for spacing between items */
   margin: 0 0 0 0;
   padding: 0;
-  display: inline-block;
+  float: left;
 }
 
 /* Last carousel item  */
@@ -145,6 +143,7 @@
   position:relative;
   display:block;
   text-indent: -9999px;
+
 }
 .touchcarousel .tc-paging-item.current { }
 .touchcarousel .tc-paging-item:hover { }
@@ -200,3 +199,6 @@
 .touchcarousel .auto-cursor{ cursor:auto; }
 
 
+
+
+/* Copyright 2011, Dmitry Semenov, http://dimsemenov.com */

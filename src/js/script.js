@@ -51,10 +51,12 @@ function createCarousel(sliders) {
         $(`#carousel-${i}`).touchCarousel({
             pagingNav: false,
             snapToItems: false,
-            itemsPerMove: 4,
+            itemsPerMove: 1,
             scrollToLast: false,
-            loopItems: false,
-            scrollbar: false
+            loopItems: true,
+            scrollbar: false,
+            scrollToLast: false,
+            useWebkit3d: true
         });
     })
 }
@@ -135,10 +137,10 @@ function smoothScroll(){
     }
 
 }
+$(window).load(function() {
+    lateralMenu()
+    projects()
+});
 
-
-
-lateralMenu()
-projects()
 //draggableCarousel()
 //smoothScroll()
